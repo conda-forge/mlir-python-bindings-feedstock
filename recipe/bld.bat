@@ -9,7 +9,6 @@ cmake -GNinja ^
   -DLLVM_BUILD_TOOLS=ON ^
   -DLLVM_BUILD_UTILS=ON ^
   -DMLIR_ENABLE_BINDINGS_PYTHON=ON ^
-  -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra" ^
   -DPython3_EXECUTABLE="%PYTHON%" ^
   ..\mlir
 
