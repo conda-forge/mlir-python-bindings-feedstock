@@ -1,7 +1,8 @@
+@echo on
 mkdir build
 cd build
 
-cmake -GNinja ^
+cmake -G "NMake Makefiles" ^
   -DCMAKE_BUILD_TYPE=Release ^
   -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
   -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
@@ -14,10 +15,11 @@ cmake -GNinja ^
 
 if %ERRORLEVEL% neq 0 exit 1
 
-ninja -j%CPU_COUNT%
+set CL=/MP
+nmake
 if %ERRORLEVEL% neq 0 exit 1
 
-ninja install
+nmake install
 if not exist "%SP_DIR%" mkdir "%SP_DIR%"
 move "%PREFIX%"\Library\python_packages\mlir_core\mlir "%SP_DIR%"\
 
