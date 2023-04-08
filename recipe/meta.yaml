@@ -7,13 +7,12 @@ package:
 source:
   - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ version.replace(".rc", "-rc") }}/llvm-project-{{ version.replace(".rc", "rc") }}.src.tar.xz
     sha256: 9d53ad04dc60cb7b30e810faf64c5ab8157dadef46c8766f67f286238256ff92
-#    patches:
-#      # https://reviews.llvm.org/D99470
-#      - 0001-Support-cross-compiling-standalone-MLIR.patch
+    patches:
+      # https://reviews.llvm.org/D99470
+      - 0001-Support-cross-compiling-standalone-MLIR.patch
 
 build:
   number: 0
-  skip: true  # [not win]
 
 requirements:
   build:
