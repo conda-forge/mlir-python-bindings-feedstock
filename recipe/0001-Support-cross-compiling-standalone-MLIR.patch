@@ -8,18 +8,18 @@ Subject: [PATCH] Support cross compiling standalone MLIR
  1 file changed, 13 insertions(+)
 
 diff --git a/mlir/CMakeLists.txt b/mlir/CMakeLists.txt
-index 088aec88f..9ba5afcbf 100644
+index c9b0d53bc3e9..a7870efc68e5 100644
 --- a/mlir/CMakeLists.txt
 +++ b/mlir/CMakeLists.txt
-@@ -30,6 +30,7 @@ if(MLIR_STANDALONE_BUILD)
+@@ -41,6 +41,7 @@ if(MLIR_STANDALONE_BUILD)
    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY
      "${CMAKE_CURRENT_BINARY_DIR}/lib${LLVM_LIBDIR_SUFFIX}")
    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/bin")
 +  set(MLIR_BUILT_STANDALONE 1)
+
+   set(LLVM_LIT_ARGS "-sv" CACHE STRING "Default options for lit")
  endif()
- 
- set(MLIR_TOOLS_INSTALL_DIR "${CMAKE_INSTALL_BINDIR}" CACHE PATH
-@@ -155,6 +156,18 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
+@@ -164,6 +165,18 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
  include_directories( "include")
  include_directories( ${MLIR_INCLUDE_DIR})
  
