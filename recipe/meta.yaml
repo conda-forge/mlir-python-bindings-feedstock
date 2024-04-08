@@ -13,6 +13,10 @@ source:
 
 build:
   number: 0
+  always_include_files:
+    # Must overwrite cmake metadata from mlir
+    - lib/cmake/mlir/          # [unix]
+    - Library/lib/cmake/mlir/  # [win]
 
 requirements:
   build:
