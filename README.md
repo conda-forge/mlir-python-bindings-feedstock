@@ -260,5 +260,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@conda-forge/mlir](https://github.com/conda-forge/mlir/)
 * [@jim22k](https://github.com/jim22k/)
 
