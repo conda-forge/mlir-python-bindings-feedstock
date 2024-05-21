@@ -12,7 +12,7 @@ source:
       - 0001-Support-cross-compiling-standalone-MLIR.patch
 
 build:
-  number: 0
+  number: 1
   always_include_files:
     # Must overwrite cmake metadata from mlir
     - lib/cmake/mlir/          # [unix]
@@ -39,7 +39,6 @@ requirements:
   run:
     - python
     - pyyaml
-    - {{ pin_compatible("numpy") }}
     - mlir {{ version }}
 
 test:
