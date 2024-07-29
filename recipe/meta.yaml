@@ -31,14 +31,10 @@ requirements:
     - python                 # [build_platform != target_platform]
     - numpy                  # [build_platform != target_platform]
     - pybind11 >=2.8.0       # [build_platform != target_platform]
-    # native mlir-tblgen wants to find these for linking
-    - zlib                   # [build_platform != target_platform]
-    - zstd                   # [build_platform != target_platform]
   host:
     - llvmdev {{ version }}
     - llvm {{ version }}
     - mlir  {{ version }}
-    - zlib
     - python
     - numpy
     - pybind11 >=2.8.0
