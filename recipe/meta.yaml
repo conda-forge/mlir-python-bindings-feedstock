@@ -17,6 +17,7 @@ build:
     # Must overwrite cmake metadata from mlir
     - lib/cmake/mlir/          # [unix]
     - Library/lib/cmake/mlir/  # [win]
+  skip: true  # [osx or build_platform == target_platform]
 
 requirements:
   build:
