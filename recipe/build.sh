@@ -30,6 +30,8 @@ cmake ${CMAKE_ARGS} \
   -DMLIR_ENABLE_BINDINGS_PYTHON:bool=ON \
   -DPython3_EXECUTABLE="${PYTHON}" \
   -DPython3_ROOT_DIR="${PREFIX}" \
+  -DPython3_FIND_STRATEGY=LOCATION \
+  -DPython3_FIND_UNVERSIONED_NAMES=FIRST \
   -GNinja \
   ../mlir
 
