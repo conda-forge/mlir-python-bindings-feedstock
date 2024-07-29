@@ -28,7 +28,7 @@ cmake ${CMAKE_ARGS} \
   -DLLVM_BUILD_TOOLS=ON \
   -DLLVM_BUILD_UTILS=ON \
   -DMLIR_ENABLE_BINDINGS_PYTHON:bool=ON \
-  -DPython3_EXECUTABLE=${PREFIX} \
+  -DPython3_EXECUTABLE="${PYTHON}" \
   -GNinja \
   ../mlir
 
