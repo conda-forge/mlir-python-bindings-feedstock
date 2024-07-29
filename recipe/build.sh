@@ -7,13 +7,8 @@ if [[ "${target_platform}" == "linux-ppc64le" ]]; then
   export CXXFLAGS="${CXXFLAGS//-fno-plt/}"
 fi
 
-IS_PYPY=$(${PYTHON} -c "import platform; print(int(platform.python_implementation() == 'PyPy'))")
 LIB_PYTHON="${PREFIX}/lib/libpython${PY_VER}${SHLIB_EXT}"
-if [[ ${IS_PYPY} == "1" ]]; then
-    INC_PYTHON="$PREFIX/include/pypy${PY_VER}"
-else
-    INC_PYTHON="$PREFIX/include/python${PY_VER}"
-fi
+INC_PYTHON="$PREFIX/include/python${PY_VER}"
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" == "1" ]]; then
   CMAKE_ARGS="${CMAKE_ARGS} -DLLVM_TABLEGEN_EXE=$BUILD_PREFIX/bin/llvm-tblgen -DNATIVE_LLVM_DIR=$BUILD_PREFIX/lib/cmake/llvm"
@@ -40,7 +35,6 @@ cmake ${CMAKE_ARGS} \
   -DPython_LIBRARY="${LIB_PYTHON}" \
   -DPython3_EXECUTABLE="${PYTHON}" \
   -DPython3_INCLUDE_DIR="${INC_PYTHON}" \
-  -DPython3_NUMPY_INCLUDE_DIRS="$(python -c 'import numpy;print(numpy.get_include())')" \
   -DPython3_LIBRARY="${LIB_PYTHON}" \
   -DPython3_PACKAGES_PATH="${SP_DIR}" \
   -DPython3_FIND_STRATEGY=LOCATION \

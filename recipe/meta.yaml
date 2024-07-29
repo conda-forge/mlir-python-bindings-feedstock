@@ -43,9 +43,9 @@ requirements:
     - mlir {{ version }}
 
 test:
-  imports:                  # [build_platform == target_platform]
-    - mlir                  # [build_platform == target_platform]
-    - mlir.ir               # [build_platform == target_platform]
+  imports:
+    - mlir
+    - mlir.ir
   commands:
     - test -f "$SP_DIR/mlir/ir.py"                               # [unix]
     - test -f "$SP_DIR/mlir/execution_engine.py"                 # [unix]
