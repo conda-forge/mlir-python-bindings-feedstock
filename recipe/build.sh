@@ -7,8 +7,17 @@ if [[ "${target_platform}" == "linux-ppc64le" ]]; then
   export CXXFLAGS="${CXXFLAGS//-fno-plt/}"
 fi
 
-LIB_PYTHON="${PREFIX}/lib/libpython${PY_VER}${SHLIB_EXT}"
-INC_PYTHON="$PREFIX/include/python${PY_VER}"
+export BUILD_NUMPY_INCLUDE_DIRS=$( $PYTHON -c "import numpy; print (numpy.get_include())")
+export TARGET_NUMPY_INCLUDE_DIRS=$SP_DIR/numpy/core/include
+
+echo $BUILD_NUMPY_INCLUDE_DIRS
+echo $TARGET_NUMPY_INCLUDE_DIRS
+
+if [[ $CONDA_BUILD_CROSS_COMPILATION == 1 ]]; then
+  echo "Copying files from $BUILD_NUMPY_INCLUDE_DIRS to $TARGET_NUMPY_INCLUDE_DIRS"
+  mkdir -p $TARGET_NUMPY_INCLUDE_DIRS
+  cp -r $BUILD_NUMPY_INCLUDE_DIRS/numpy $TARGET_NUMPY_INCLUDE_DIRS
+fi
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" == "1" ]]; then
   CMAKE_ARGS="${CMAKE_ARGS} -DLLVM_TABLEGEN_EXE=$BUILD_PREFIX/bin/llvm-tblgen -DNATIVE_LLVM_DIR=$BUILD_PREFIX/lib/cmake/llvm"
@@ -32,6 +41,7 @@ cmake ${CMAKE_ARGS} \
   -DPython3_ROOT_DIR="${PREFIX}" \
   -DPython3_FIND_STRATEGY=LOCATION \
   -DPython3_FIND_UNVERSIONED_NAMES=FIRST \
+  -DPython3_NumPy_INCLUDE_DIR="${TARGET_NUMPY_INCLUDE_DIRS}" \
   -GNinja \
   ../mlir
 
