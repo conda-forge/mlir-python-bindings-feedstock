@@ -28,7 +28,7 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" == "1" ]]; then
   NATIVE_FLAGS="${NATIVE_FLAGS};-DCMAKE_PREFIX_PATH=${BUILD_PREFIX}"
   CMAKE_ARGS="${CMAKE_ARGS} -DCROSS_TOOLCHAIN_FLAGS_NATIVE=${NATIVE_FLAGS}"
 else
-  rm -rf $BUILD_PREFIX/bin/llvm-tblgen
+  rm -rf $BUILD_PREFIX/bin/mlir-tblgen
 fi
 
 mkdir -p build
