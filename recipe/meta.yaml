@@ -31,8 +31,10 @@ requirements:
     - python                 # [build_platform != target_platform]
     - numpy                  # [build_platform != target_platform]
     - pybind11 >=2.8.0       # [build_platform != target_platform]
-    # for mlir-tblgen
+    # for native mlir-tblgen
     - mlir                   # [build_platform != target_platform]
+    - zlib                   # [build_platform != target_platform]
+    - zstd                   # [build_platform != target_platform]
   host:
     - llvmdev {{ version }}
     - llvm {{ version }}
