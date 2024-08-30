@@ -6,8 +6,8 @@ build_platform:
   linux_ppc64le: linux_64
   osx_arm64: osx_64
 github:
-  branch_name: main
-  tooling_branch_name: main
+  branch_name: rc
+  tooling_branch_name: rc
 conda_build:
   error_overlinking: false
 conda_forge_output_validation: true
