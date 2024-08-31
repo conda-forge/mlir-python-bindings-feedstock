@@ -1,3 +1,7 @@
+azure:
+  free_disk_space: true
+  settings_linux:
+    swapfile_size: 15GiB
 bot:
   version_updates:
     sources:
