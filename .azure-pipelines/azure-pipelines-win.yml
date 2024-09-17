@@ -8,16 +8,11 @@ jobs:
     vmImage: windows-2022
   strategy:
     matrix:
-<<<<<<< HEAD
-      win_64_numpy2.0python3.10.____cpython:
-        CONFIG: win_64_numpy2.0python3.10.____cpython
-=======
       win_64_python3.10.____cpython:
         CONFIG: win_64_python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
       win_64_python3.11.____cpython:
         CONFIG: win_64_python3.11.____cpython
->>>>>>> 4da07c1 (MNT: Re-rendered with conda-build 24.7.1, conda-smithy 3.39.0, and conda-forge-pinning 2024.08.30.04.04.42)
         UPLOAD_PACKAGES: 'True'
       win_64_python3.12.____cpython:
         CONFIG: win_64_python3.12.____cpython
