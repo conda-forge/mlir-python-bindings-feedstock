@@ -1,4 +1,4 @@
-{% set version = "19.1.0.rc3" %}
+{% set version = "19.1.0" %}
 
 package:
   name: mlir-python-bindings
@@ -6,7 +6,7 @@ package:
 
 source:
   - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ version.replace(".rc", "-rc") }}/llvm-project-{{ version.replace(".rc", "-rc") }}.src.tar.xz
-    sha256: ea80f9d588abb4837bd6bfb84ee5e4fff3ea2bd87e754615bc578308ad248e38
+    sha256: 5042522b49945bc560ff9206f25fb87980a9b89b914193ca00d961511ff0673c
     patches:
       # https://reviews.llvm.org/D99470
       - 0001-Support-cross-compiling-standalone-MLIR.patch
@@ -66,4 +66,6 @@ about:
 extra:
   recipe-maintainers:
     - jim22k
+    - mtsokol
+    - hameerabbasi
     - conda-forge/mlir
