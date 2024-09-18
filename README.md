@@ -324,5 +324,7 @@ Feedstock Maintainers
 =====================
 
 * [@conda-forge/mlir](https://github.com/orgs/conda-forge/teams/mlir/)
+* [@hameerabbasi](https://github.com/hameerabbasi/)
 * [@jim22k](https://github.com/jim22k/)
+* [@mtsokol](https://github.com/mtsokol/)
 
