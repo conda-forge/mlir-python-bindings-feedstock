@@ -1,4 +1,4 @@
-{% set version = "19.1.5" %}
+{% set version = "19.1.6" %}
 
 package:
   name: mlir-python-bindings
@@ -6,7 +6,7 @@ package:
 
 source:
   - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ version.replace(".rc", "-rc") }}/llvm-project-{{ version.replace(".rc", "-rc") }}.src.tar.xz
-    sha256: bd8445f554aae33d50d3212a15e993a667c0ad1b694ac1977f3463db3338e542
+    sha256: e3f79317adaa9196d2cfffe1c869d7c100b7540832bc44fe0d3f44a12861fa34
     patches:
       # https://reviews.llvm.org/D99470
       - 0001-Support-cross-compiling-standalone-MLIR.patch
