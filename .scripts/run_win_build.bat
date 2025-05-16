@@ -23,6 +23,9 @@ set "MICROMAMBA_URL=https://github.com/mamba-org/micromamba-releases/releases/do
 set "MICROMAMBA_TMPDIR=%TMP%\micromamba-%RANDOM%"
 set "MICROMAMBA_EXE=%MICROMAMBA_TMPDIR%\micromamba.exe"
 
+:: delete python in image
+del /S /Q C:\hostedtoolcache\windows\Python >nul
+
 echo Downloading micromamba %MICROMAMBA_VERSION%
 if not exist "%MICROMAMBA_TMPDIR%" mkdir "%MICROMAMBA_TMPDIR%"
 powershell -ExecutionPolicy Bypass -Command "(New-Object Net.WebClient).DownloadFile('%MICROMAMBA_URL%', '%MICROMAMBA_EXE%')"
