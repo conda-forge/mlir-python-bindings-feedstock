@@ -38,7 +38,9 @@ requirements:
     - llvmdev {{ version }}
     - llvm {{ version }}
     - mlir  {{ version }}
+    - libmlir
     - zlib
+    - zstd      # [win]
     - python
     - numpy
     - nanobind >=2.4.0
