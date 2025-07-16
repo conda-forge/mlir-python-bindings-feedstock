@@ -47,6 +47,8 @@ requirements:
     - python
     - pyyaml
     - mlir {{ version }}
+    # we need to do this manually because clang_bootstrap has no run-export
+    - libcxx >={{ version }}    # [osx]
 
 test:
   imports:
