@@ -1,3 +1,4 @@
+# we want to match compilers with mlir (since we're recompiling portions of that)
 c_compiler:         # [osx]
   - clang_bootstrap # [osx]
 cxx_compiler:       # [osx]
