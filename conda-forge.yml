@@ -6,7 +6,7 @@ azure:
     variables:
       CONDA_BLD_PATH: C:\\bld\\
       MINIFORGE_HOME: C:\Miniforge
-      SET_PAGEFILE: "True"
+      SET_PAGEFILE: 'True'
 bot:
   version_updates:
     sources:
