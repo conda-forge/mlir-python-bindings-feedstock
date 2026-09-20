@@ -16,12 +16,12 @@ provider:
 test: native_and_emulated
 workflow_settings:
   build_workspace_dir:
-    - value: C:\bld
-      os: win
+  - os: win
+    value: C:\bld
   free_disk_space:
-    - value: quick
+  - value: quick
   pagefile_size:
-    - value: 20
+  - value: 20
   tools_install_dir:
-    - value: C:\Miniforge
-      os: win
+  - os: win
+    value: C:\Miniforge
