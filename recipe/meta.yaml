@@ -1,4 +1,4 @@
-{% set version = "23.1.1" %}
+{% set version = "23.1.2" %}
 
 package:
   name: mlir-python-bindings
@@ -6,13 +6,13 @@ package:
 
 source:
   - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ version.replace(".rc", "-rc") }}/llvm-project-{{ version.replace(".rc", "-rc") }}.src.tar.xz
-    sha256: ebe9be46fe8756d58c5b198ffad0fa2a766257add81a4dc52179bfacc7888ee6
+    sha256: c98bbef08a2b4c2613cd50e9aa9ae7b69b1fe6c16b2c40373bc0ab6116fdf78a
     patches:
       # https://reviews.llvm.org/D99470
       - 0001-Support-cross-compiling-standalone-MLIR.patch
 
 build:
-  number: 1
+  number: 0
   always_include_files:
     # Must overwrite cmake metadata from mlir
     - lib/cmake/mlir/          # [unix]
