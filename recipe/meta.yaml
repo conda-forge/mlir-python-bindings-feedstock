@@ -13,6 +13,8 @@ source:
 
 build:
   number: 0
+  # feel free to debug if you see this
+  skip: true  # [ppc64le and py==315]
   always_include_files:
     # Must overwrite cmake metadata from mlir
     - lib/cmake/mlir/          # [unix]
